@@ -45,7 +45,7 @@ class SnakeGame extends SurfaceView implements Runnable {
     private SurfaceHolder mSurfaceHolder;
     private Paint mPaint;
 
-    //a snake sss
+    //a snake
     private Snake mSnake;
 
     //an apple
@@ -56,7 +56,7 @@ class SnakeGame extends SurfaceView implements Runnable {
     public SnakeGame(Context context,Point size){
         super(context);
 
-        //work ou how many pixels each block is
+        //work out how many pixels each block is
         int blockSize = size.x/NUM_BLOCKS_WIDE;
         //how many blocks of the same size will fit into the hight
         mNumBlocksHigh = size.y/blockSize;
@@ -106,7 +106,7 @@ class SnakeGame extends SurfaceView implements Runnable {
         //reset the mScore
         mScore = 0;
 
-        //setup mNextFrameTime so an update can triggered
+        //setup mNextFrameTime so an update can be triggered
         mNextFrameTime = System.currentTimeMillis();
 
     }
@@ -154,8 +154,7 @@ class SnakeGame extends SurfaceView implements Runnable {
 
         //did the head of the snake eat the apple?
         if (mSnake.checkDinner(mApple.getLocation())){
-            //this reminds me of edge of tomorrow
-            //one day the apple will be ready
+            
             mApple.spawn();
 
             //add to mScore
@@ -180,7 +179,7 @@ class SnakeGame extends SurfaceView implements Runnable {
         if (mSurfaceHolder.getSurface().isValid()){
             mCanvas = mSurfaceHolder.lockCanvas();
 
-            //fill the sdcreen with color
+            //fill the screen with color
             mCanvas.drawColor(Color.argb(255,26,128,182));
 
             //set the size and color of the mPaint for the text
@@ -202,7 +201,7 @@ class SnakeGame extends SurfaceView implements Runnable {
                 mPaint.setTextSize(250);
 
                 //draw the massage
-                //we will give this an internationla upgrade soon
+                
                 mCanvas.drawText("Tap To Play!",200,700,mPaint);
             }
             //unlock the canvas to show graphics for this frame
